@@ -4,7 +4,7 @@ guide:
   - lancer l'API => nodemon/node serverCrudWithMongo
 
 -- ouvrir un deuxiéme terminal et :
-    - cd client\demoTableWithAngular4
+    - cd client
     - run npm install
     - run : ng serve
     - enjoy it teacher :)
