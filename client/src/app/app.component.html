@@ -1,0 +1,50 @@
+<h1 style="color:blue">Demonstration de l'affichage du tableau </h1>
+<h1 style="color:lightslategray">Description</h1>
+
+<p>
+  Il s'agit d'un exemple d'affichage d'une table des restaurants en utilisation angular 4 et le module cors pour autoriser l'accès de l'applicatio
+  du client à l'API server, les données seront acheminés du serveur sous format json vers le client, en utilisant le typescript ainsi on aura la possibilité
+   d'interprété ces données pour enfin les affichés sous format d'une table html5
+</p>
+<p>
+  la recherche se fait par nom des restaurants et ce à l'aide d'un pipe que j'ai installé monsieur
+</p>
+
+
+<h2 style="text-align: center"> My Table</h2>
+
+<div >
+    <div *ngIf="data">
+      
+      <div>
+        
+        <div ><div class="row"><div class="col-sm-6"><!--div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div--></div><div class="col-sm-6"><div id="datatable_filter" class="dataTables_filter">
+          <label>Search:<input type="text" placeholder="rechercher par nom du resto..." name="search" [(ngModel)]="search" class="form-control input-sm"></label></div></div></div><div class="row"><div><table id="datatable" border="2">
+          <thead>
+            <td>ID Resto</td>
+            <td>Nom</td>
+            <td>Cuisine</td>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of arrayRestaurants | filter:search | paginate: { itemsPerPage: 8, currentPage: p }"  role="row" class="odd">
+              <td>{{ item._id }}</td>
+              <td >{{ item.name }}</td>
+              <td filterUsers:searchBox >{{ item.cuisine }}</td>
+              </tr></tbody>
+        </table></div></div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7">
+          <!--div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="datatable_previous"><a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="7" tabindex="0">Next</a></li></ul></div></div></div></div>
+        </div-->
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+        <pagination-controls class="paginate_button active" (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+    <flash-messages>
+        <div *ngIf="!deleteData" class="row show-hide-message">
+            <div [ngClass]="messageClass">
+              {{ errorObject }}
+            </div>
+          </div>
+    </flash-messages>
+  </div>
+  </div>
+  </div>
