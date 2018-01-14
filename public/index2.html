@@ -1,0 +1,42 @@
+<html lang="fr">
+	<head>
+        <title>Table Modifier/Supprimer</title>
+		<script src="js/crudAvecFetchBorderTable.js"></script>
+		<!--
+		<script src="js/crudAvecFetch.js"></script>
+        -->
+
+        <!-- using library cdn jquery-->
+         <!--script>
+            $( document ).ready( function() {
+               // getRequest1();
+            });
+         </script-->
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+        <h3>Affichage table des restaurants avec possibilité de modifier/supprimer un restaurant </h3>
+        <div id="reponseGET"></div>
+        <div id="reponsePUT" class="response"></div>
+        <form id="formulaireModification" onsubmit="putRequest(event);">
+            <fieldset>
+                <legend>Modification d'un restaurant</legend>
+                <label>
+                    Id: <input type="text" name="_id"
+                    value="56b9f89be0adc7f00f348cf6" required placeholder="Id du restaurant à modifier">
+                </label>
+                <p></p>
+                <label>
+                    Nom: <input type="text" name="nom"
+                    value="Sushis de rabat" required placeholder="Michel's restaurant">
+                </label>
+                <p></p>
+                <label>
+                    Cuisine: <input type="text" name="cuisine" value="Japonais/Marocaine" required placeholder="Cuisine française">
+                </label>
+                <p></p>
+                <button>Modifier ce restaurant</button>
+            </fieldset>
+        </form>
+	</body>
+</html>
