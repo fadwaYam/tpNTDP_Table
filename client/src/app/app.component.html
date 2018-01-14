@@ -38,13 +38,6 @@
         <pagination-controls class="paginate_button active" (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
-    <flash-messages>
-        <div *ngIf="!deleteData" class="row show-hide-message">
-            <div [ngClass]="messageClass">
-              {{ errorObject }}
-            </div>
-          </div>
-    </flash-messages>
   </div>
   </div>
   </div>
