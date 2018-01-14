@@ -35,7 +35,6 @@ export class AppComponent {
         console.log(this.data);
         console.log('cuisine restaurant :' ,restos.data[0].cuisine);
         console.log('nom restaurant: ', restos.data[0].name);
-        //this.arrayUsers = users.message;
       }else{
          this.data = false;
          this.errorObject = restos.message;
